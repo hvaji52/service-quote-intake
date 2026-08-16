@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Services Quote Request</title>
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+    <header>
+        <h1>Request a Home Service Quote</h1>
+        <p>Tell us about your project and receive a preliminary estimate.</p>
+    </header>
+    <main>
+        <form id="quote-form">
+            <fieldset class="form-section">
+                <legend>Contact Information</legend>
+                <div class="form-group">
+                    <label for="full-name">Full name</label>
+                    <input id="full-name" type="text" name="fullName" autocomplete="name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" autocomplete="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Telephone</label>
+                    <input type="tel" id="phone" name="phone" autocomplete="tel" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="zip-code">ZIP Code</label>
+                    <input type="text" id="zip-code" name="zipCode" autocomplete="postal-code" required>
+                </div>
+            </fieldset>
+            <fieldset class="form-section">
+                <legend>Project Details</legend>
+                <div class="form-group">
+                    <label for="service-type">Service Needed</label>
+                    <select name="serviceType" id="service-type" required>
+                        <option value="" disabled selected>Select a Service</option>
+                        <option value="general-repair">General Repair</option>
+                        <option value="plumbing">Minor Plumbing</option>
+                        <option value="electrical">Minor Electrical</option>
+                        <option value="carpentry">Carpentry</option>
+                        <option value="painting">Painting</option>
+                        <option value="drywall">Drywall Repair</option>
+                        <option value="installation">Installation or Assembly</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="project-description">Describe Your Project</label>
+                    <textarea name="projectDescription" id="project-description" rows="5" minlength="20" required></textarea>
+                </div>
+            </fieldset>
+            <fieldset class="form-section">
+                <legend>Quote Preferences</legend>
+                <div class="form-group">
+                    <label for="budget">Approximate Budget</label>
+                    <select id="budget" name="budget" required>
+                        <option value="" disabled selected>Select a Budget</option>
+                        <option value="under-250">Under $250</option>
+                        <option value="250-500">$250-$500</option>
+                        <option value="500-1000">$500-$1,000</option>
+                        <option value="1000-2500">$1,000-$2,500</option>
+                        <option value="over-2500">Over $2,500</option>
+                        <option value="not-sure">Not Sure</option>
+                    </select>
+                </div>
+                <fieldset class="form-group">
+                    <legend>How Soon Do You Need Service?</legend>
+
+                    <div class="radio-option">
+                        <input type="radio" id="urgency-flexible" name="urgency" value="flexible" required>
+                        <label for="urgency-flexible">My Schedule Is Flexible</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="urgency-week" name="urgency" value="within-a-week" required>
+                        <label for="urgency-week">Within A Week</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="urgency-asap" name="urgency" value="as-soon-as-possible" required>
+                        <label for="urgency-asap">As Soon As Possible</label>
+                    </div>
+                </fieldset>
+            </fieldset>
+            <div class="form-actions">
+                <button type="submit">Review Quote Request</button>
+            </div>
+        </form>
+        
+        <section id="quote-summary" class="quote-summary" hidden aria-live="polite">
+            <h2>Quote Request Summary</h2>
+            <div id="summary-content"></div>
+        </section>
+
+    </main>
+
+<script src="script.js"></script>
+</body>
+</html>
