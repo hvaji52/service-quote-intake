@@ -67,13 +67,7 @@ quoteForm.addEventListener("submit", function (event){
     const formData = new FormData(quoteForm);
     const quoteRequest = Object.fromEntries(formData);
     const estimatedPrice = calculateEstimate(quoteRequest);
-
-    if (estimatedPrice !== null) {
-        addSummaryLine("Preliminary Estimate", `$${estimatedPrice.toFixed(2)}`);
-    } else {
-        addSummaryLine("Preliminary Estimate", "Unable to calculate");
-        }
-
+    
     summaryContent.textContent = "";
     quoteSummary.hidden = false;
 
@@ -86,14 +80,18 @@ quoteForm.addEventListener("submit", function (event){
     addSummaryLine("Budget", budgetLabels[quoteRequest.budget]);
     addSummaryLine("Urgency", urgencyLabels[quoteRequest.urgency]);
     
-
+    if (estimatedPrice !== null) {
+        addSummaryLine("Preliminary Estimate", `$${estimatedPrice.toFixed(2)}`);
+    } else {
+        addSummaryLine("Preliminary Estimate", "Unable to calculate");
+        }
 
 console.log("Form Submitted");
 console.log("quoteRequest:", quoteRequest);
 console.log("serviceType:", quoteRequest.serviceType);
 console.log("service label:", serviceLabels[quoteRequest.serviceType]);
 console.log("Base Price: ", basePrices[quoteRequest.serviceType]);
-console.log("Estimated price:", estimatedPrice.toFixed(2));
+console.log("Estimated price:", estimatedPrice);
 
 });
 
