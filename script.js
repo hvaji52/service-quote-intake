@@ -62,7 +62,7 @@ function calculateEstimate(quoteRequest) {
         const basePrice = basePrices[quoteRequest.serviceType];
         const urgencyMultiplier = urgencyMultipliers[quoteRequest.urgency];
 
-        if (basePrice === undefined || urgencyMultiplier === undefined){
+        if (basePrice == null || urgencyMultiplier == null){
             return null;
         }
 
@@ -130,11 +130,14 @@ quoteForm.addEventListener("submit", function (event){
     } else {
         addSummaryLine("Preliminary Estimate", "Unable to calculate");
         }
+    
+    addSummaryLine("Budget Compatibility", budgetMessage);
+    
     addSummaryNote(
     "This is a preliminary estimate based on service type and urgency. Final pricing may vary after reviewing the project details."
     );
    
-    addSummaryLine("Budget Compatibility", budgetMessage);
+    
 
 console.log("Form Submitted");
 console.log("quoteRequest:", quoteRequest);

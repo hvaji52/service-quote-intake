@@ -6,9 +6,9 @@
     --color-text: #202a33;
     --color-muted: #5f6b76;
     --color-border: #cbd4dc;
-    --color-foucs: #2563eb;
+    --color-focus: #2563eb;
     --border-radius: 12px;
-    --box-shadow: 1 12px 30px rgba(23, 50, 77, 0.12);
+    --box-shadow: 1px 12px 30px rgba(23, 50, 77, 0.12);
 }
 
 * {
