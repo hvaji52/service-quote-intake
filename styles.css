@@ -78,3 +78,103 @@ body {
     font-size: 1.25rem;
     font-weight: 700;
 }
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group > label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.form-group > input,
+.form-group > select,
+.form-group > textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+}
+
+.form-group > input:focus-visible,
+.form-group > select:focus-visible,
+.form-group > textarea:focus-visible {
+    outline: 2px solid var(--color-focus);
+    outline-offset: 2px;
+}
+
+.form-actions button {
+    background-color: var(--color-primary);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 0.875rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.form-actions button:hover {
+    background-color: var(--color-accent);
+}
+
+.form-actions button:focus-visible {
+    outline: 2px solid var(--color-focus);
+    outline-offset: 2px;
+}
+
+.quote-summary {
+    margin-top: 2rem;
+    padding: 2rem;
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.quote-summary h2 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    color: var(--color-primary);
+    font-size: 1.5rem;
+}
+
+#summary-content p {
+    margin-bottom: 0.75rem;
+    line-height: 1.6;
+}
+
+.estimate-line {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-primary);
+}
+
+.budget-line {
+    padding: 0.75rem;
+    border-radius: 8px;
+    background-color: var(--color-background);
+    font-weight: 600;
+}
+
+.budget-success {
+    background-color: #e8f5e9;
+    color: #1b5e20;
+    border: 1px solid #a5d6a7;
+}
+
+.budget-warning {
+    background-color: #ffebee;
+    color: #b71c1c;
+    border: 1px solid #ef9a9a;
+}
+
+.budget-neutral {
+    background-color: #f1f3f5;
+    color: #495057;
+    border: 1px solid #ced4da;
+}
+

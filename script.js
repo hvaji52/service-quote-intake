@@ -52,10 +52,18 @@ const budgetLimits = {
     "not-sure" : null
 };
 
-function addSummaryLine(label, value) {
-       const line = document.createElement("p");
-       line.textContent = `${label}: ${value}`;
-       summaryContent.appendChild(line);
+function addSummaryLine(label, value, className, additionalClass) {
+        const line = document.createElement("p");
+        line.textContent = `${label}: ${value}`;
+        
+        if(className)  {
+        line.classList.add(className);
+        }
+        if (additionalClass) {
+            line.classList.add(additionalClass);
+        }
+
+        summaryContent.appendChild(line);
     }
 
 function calculateEstimate(quoteRequest) {
@@ -113,6 +121,13 @@ quoteForm.addEventListener("submit", function (event){
     const estimatedPrice = calculateEstimate(quoteRequest);
     const budgetMessage = checkBudgetCompatibility(estimatedPrice, quoteRequest.budget);
 
+    let budgetClass = "budget-neutral";
+    if (budgetMessage === "Estimate exceeds the selected budget maximum.") {
+        budgetClass = "budget-warning";
+    } else if (budgetMessage === "Estimate does not exceed the selected budget maximum.") {
+        budgetClass = "budget-success";
+    }
+
     summaryContent.textContent = "";
     quoteSummary.hidden = false;
 
@@ -126,26 +141,17 @@ quoteForm.addEventListener("submit", function (event){
     addSummaryLine("Urgency", urgencyLabels[quoteRequest.urgency]);
     
     if (estimatedPrice !== null) {
-        addSummaryLine("Preliminary Estimate", `$${estimatedPrice.toFixed(2)}`);
+        addSummaryLine("Preliminary Estimate", `$${estimatedPrice.toFixed(2)}`, "estimate-line");
     } else {
-        addSummaryLine("Preliminary Estimate", "Unable to calculate");
+        addSummaryLine("Preliminary Estimate", "Unable to calculate", "estimate-line");
         }
     
-    addSummaryLine("Budget Compatibility", budgetMessage);
+    addSummaryLine("Budget Compatibility", budgetMessage, "budget-line", budgetClass);
     
     addSummaryNote(
     "This is a preliminary estimate based on service type and urgency. Final pricing may vary after reviewing the project details."
     );
-   
+
     
-
-console.log("Form Submitted");
-console.log("quoteRequest:", quoteRequest);
-console.log("serviceType:", quoteRequest.serviceType);
-console.log("service label:", serviceLabels[quoteRequest.serviceType]);
-console.log("Base Price: ", basePrices[quoteRequest.serviceType]);
-console.log("Estimated price:", estimatedPrice);
-console.log("Budget limit:", budgetLimits[quoteRequest.budget]);
-
 });
 
