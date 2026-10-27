@@ -118,7 +118,7 @@ body {
 }
 
 .form-actions button:hover {
-    background-color: var(--color-accent);
+    background-color: #9a4a08;
 }
 
 .form-actions button:focus-visible {
