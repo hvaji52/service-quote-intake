@@ -47,6 +47,23 @@ body {
     font-size: 1.1rem;
 }
 
+.demo-notice {
+    padding:  1rem 1.25rem;
+    background-color: var(--color-background);
+    border: 1px solid var(--color-border);
+    color: #495057;
+    border-radius: 8px;
+    font-size: 1rem;
+    text-align: center;
+}
+
+.info-icon {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-right: 0.35rem;
+}
+
 .page-content {
     padding-bottom: 4rem;
 }
@@ -178,3 +195,10 @@ body {
     border: 1px solid #ced4da;
 }
 
+.site-footer {
+    padding: 1.5rem;
+    text-align: center;
+    color: var(--color-muted);
+    font-size: 0.875rem;
+    border-top: 1px solid var(--color-border);
+}

@@ -93,7 +93,7 @@ function checkBudgetCompatibility(estimatedPrice, selectedBudget){
             if (estimatedPrice < 250) {
                 return "Estimate does not exceed the selected budget maximum."
             } else {
-                return "Estimate exceeds the selected budget maximum."
+                return "Estimate is not under $250 and falls outside the selected budget.";
             }
         case "250-500":
         case "500-1000":
@@ -122,7 +122,7 @@ quoteForm.addEventListener("submit", function (event){
     const budgetMessage = checkBudgetCompatibility(estimatedPrice, quoteRequest.budget);
 
     let budgetClass = "budget-neutral";
-    if (budgetMessage === "Estimate exceeds the selected budget maximum.") {
+    if (budgetMessage === "Estimate exceeds the selected budget maximum." || budgetMessage === "Estimate is not under $250 and falls outside the selected budget.") {
         budgetClass = "budget-warning";
     } else if (budgetMessage === "Estimate does not exceed the selected budget maximum.") {
         budgetClass = "budget-success";
@@ -152,6 +152,6 @@ quoteForm.addEventListener("submit", function (event){
     "This is a preliminary estimate based on service type and urgency. Final pricing may vary after reviewing the project details."
     );
 
-    
+
 });
 
