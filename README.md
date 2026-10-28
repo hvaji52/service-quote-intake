@@ -4,6 +4,10 @@ A responsive, front-end home-services quote estimator built using HTML, CSS, and
 
 This application demonstrates form handling, preliminary price estimation, budget compatibility checks, and dynamically generated quote summaries.
 
+## Live Demo
+
+[Try Service Quote Intake V1](https://hvaji52.github.io/service-quote-intake/)
+
 ## Features
 
 - Customer contact and project information form
