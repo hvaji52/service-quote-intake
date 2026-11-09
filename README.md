@@ -100,8 +100,7 @@ The application has undergone manual functional testing and preliminary responsi
 - Conditional budget indicators
 - Repeated submissions and summary updates
 - Desktop browser resizing
-
-Additional testing on physical mobile devices is planned after deployment.
+- Mobile testing
 
 ## Future Enhancements
 
